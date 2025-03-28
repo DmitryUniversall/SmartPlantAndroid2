@@ -1,22 +1,19 @@
 package com.smartplant.smartplantandroid
 
 import android.app.Application
+import com.smartplant.smartplantandroid.main.components.auth.services.auth.AuthServiceImplST
 
 class SmartPlantApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+
         initializeUtils()
         initializeServices()
     }
 
-    private fun initializeUtils() {
-        NetworkSettingsST.createInstance(this)
-        DevicesSettingsST.createInstance(this)
-        ApplicationStatusCodes.initialize(this)
-        DevicesLocalDataManagerST.createInstance(this)
-    }
+    private fun initializeUtils() {}
 
     private fun initializeServices() {
-
+        AuthServiceImplST.createInstance(this)
     }
 }

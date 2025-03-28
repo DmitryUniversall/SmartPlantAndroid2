@@ -1,11 +1,10 @@
-package com.smartplant.smartplantandroid.core.global_entities
+package com.smartplant.smartplantandroid.main.global_entities
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonElement
 
 @Serializable
-data class ApiResponse(
+data class ApiResponse<T>(
     @SerialName("ok")
     val ok: Boolean,
 
@@ -16,5 +15,5 @@ data class ApiResponse(
     val message: String,
 
     @SerialName("data")
-    val data: JsonElement? = null
+    val data: T? = null
 )

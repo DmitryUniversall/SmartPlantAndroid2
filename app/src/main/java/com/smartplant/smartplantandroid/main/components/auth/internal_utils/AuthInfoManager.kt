@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
 import com.smartplant.smartplantandroid.main.components.auth.entities.AuthSession
-import com.smartplant.smartplantandroid.main.components.auth.entities.User
+import com.smartplant.smartplantandroid.main.components.auth.entities.UserPrivate
 import kotlinx.io.IOException
 import kotlinx.serialization.json.Json
 import java.security.GeneralSecurityException
@@ -23,13 +23,14 @@ class AuthInfoManager(
         private const val KEY_REFRESH_TOKEN = "refreshToken"
     }
 
+    // Utils
     private val preferences = createEncryptedPreferences(context)
 
     // Cache
-    private var accessToken: String? = null
-    private var refreshToken: String? = null
-    private var user: User? = null
-    private var session: AuthSession? = null
+    private var cachedAccessToken: String? = null
+    private var cachedRefreshToken: String? = null
+    private var cachedSession: AuthSession? = null
+    private var cachedUser: UserPrivate? = null
 
     private fun createEncryptedPreferences(ctx: Context): SharedPreferences {
         return try {
@@ -48,10 +49,10 @@ class AuthInfoManager(
     }
 
     private fun resetCache() {
-        accessToken = null
-        refreshToken = null
-        user = null
-        session = null
+        cachedAccessToken = null
+        cachedRefreshToken = null
+        cachedUser = null
+        cachedSession = null
     }
 
     fun clear() {
@@ -59,17 +60,21 @@ class AuthInfoManager(
         resetCache()
     }
 
-    fun isAuthenticated() = accessToken != null && refreshToken != null
+    val isAuthenticated: Boolean get() = accessToken != null && refreshToken != null
 
-    fun setAccessToken(token: String) = preferences.edit().putString(KEY_ACCESS_TOKEN, token).apply().also { accessToken = token }
-    fun getAccessToken(): String? = accessToken ?: preferences.getString(KEY_ACCESS_TOKEN, null).also { accessToken = it }
+    var accessToken: String?
+        get() = cachedAccessToken ?: preferences.getString(KEY_ACCESS_TOKEN, null).also { cachedAccessToken = it }
+        set(token) = preferences.edit().putString(KEY_ACCESS_TOKEN, token).apply().also { cachedAccessToken = token }
 
-    fun setRefreshToken(token: String) = preferences.edit().putString(KEY_REFRESH_TOKEN, token).apply().also { refreshToken = token }
-    fun getRefreshToken(): String? = refreshToken ?: preferences.getString(KEY_REFRESH_TOKEN, null).also { refreshToken = it }
+    var refreshToken: String?
+        get() = cachedRefreshToken ?: preferences.getString(KEY_REFRESH_TOKEN, null).also { cachedRefreshToken = it }
+        set(token) = preferences.edit().putString(KEY_REFRESH_TOKEN, token).apply().also { cachedRefreshToken = token }
 
-    fun setUser(user: User) = preferences.edit().putString(KEY_USER, Json.encodeToString(user)).apply().also { this.user = user }
-    fun getUser(): User? = user ?: preferences.getString(KEY_USER, null)?.let { Json.decodeFromString<User>(it) }.also { user = it }
+    var session: AuthSession?
+        get()  = cachedSession ?: preferences.getString(KEY_SESSION, null)?.let { Json.decodeFromString<AuthSession>(it) }.also { cachedSession = it }
+        set(session) = preferences.edit().putString(KEY_SESSION, Json.encodeToString(session)).apply().also { this.cachedSession = session }
 
-    fun setSession(session: AuthSession) = preferences.edit().putString(KEY_SESSION, Json.encodeToString(session)).apply().also { this.session = session }
-    fun getSession(): AuthSession? = session ?: preferences.getString(KEY_SESSION, null)?.let { Json.decodeFromString<AuthSession>(it) }.also { session = it }
+    var user: UserPrivate?
+        get() = cachedUser ?: preferences.getString(KEY_USER, null)?.let { Json.decodeFromString<UserPrivate>(it) }.also { cachedUser = it }
+        set(user) = preferences.edit().putString(KEY_USER, Json.encodeToString(user)).apply().also { this.cachedUser = user }
 }

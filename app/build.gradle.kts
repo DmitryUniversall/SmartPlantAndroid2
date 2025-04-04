@@ -8,6 +8,10 @@ android {
     namespace = "com.smartplant.smartplantandroid"
     compileSdk = 35
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.smartplant.smartplantandroid"
         minSdk = 29
@@ -24,12 +28,27 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    buildTypes {
+        release {
+            buildConfigField("String", "API_URL", "\"${project.findProperty("API_URL")}\"")
+        }
+        debug {
+            buildConfigField("String", "API_URL", "\"${project.findProperty("API_URL")}\"")
+        }
     }
 }
 
@@ -40,6 +59,7 @@ dependencies {
     implementation(libs.ktor.client.logging)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.security.crypto)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -50,3 +70,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+val apiUrl: String by project

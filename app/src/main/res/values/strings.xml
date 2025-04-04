@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SmartPlantAndroid</string>
+    <string name="serverUnavailable">Server unavailable. Please, try again later</string>
+    <string name="unknownError">Unknown error occurred</string>
+    <string name="internalServerError">Internal server error occurred</string>
+    <string name="retry">Retry</string>
+    <string name="somethingWentWrong">Something went wrong</string>
+    <string name="error">Error</string>
 </resources>

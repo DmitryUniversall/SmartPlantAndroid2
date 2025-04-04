@@ -5,7 +5,7 @@ import com.smartplant.smartplantandroid.main.components.auth.repositories.user.U
 import com.smartplant.smartplantandroid.main.components.auth.repositories.user.UserRepositoryImplST
 import com.smartplant.smartplantandroid.main.components.auth.services.auth.AuthServiceImplST
 
-class UserServiceImplST {
+class UserServiceImplST: UserService {
     companion object {
         @Volatile
         private var _instance: UserServiceImplST? = null
@@ -13,9 +13,9 @@ class UserServiceImplST {
         fun createInstance() = _instance ?: synchronized(this) { _instance ?: UserServiceImplST().also { _instance = it } }
     }
 
-    private val userRepository: UserRepository = UserRepositoryImplST.instance
+    private val userRepository: UserRepository get() = UserRepositoryImplST.instance
 
-    suspend fun getMe(): Result<UserPrivate> {
+    override suspend fun getMe(): Result<UserPrivate> {
         return userRepository.getMe().onSuccess { user ->
             AuthServiceImplST.instance.user = user
         }

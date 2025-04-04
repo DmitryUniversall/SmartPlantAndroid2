@@ -14,19 +14,21 @@ class AuthInfoManager(
     context: Context
 ) {
     companion object {
-        private var PREFERENCES_FILENAME = "auth"
+        private const val PREFERENCES_FILENAME = "auth"
 
         // Shared preferences keys
         private const val KEY_USER = "user"
         private const val KEY_SESSION = "session"
         private const val KEY_ACCESS_TOKEN = "accessToken"
         private const val KEY_REFRESH_TOKEN = "refreshToken"
+        private const val KEY_IS_NEW_USER = "isNewUser"
     }
 
     // Utils
     private val preferences = createEncryptedPreferences(context)
 
     // Cache
+    private var cachedIsNewUser: Boolean? = null
     private var cachedAccessToken: String? = null
     private var cachedRefreshToken: String? = null
     private var cachedSession: AuthSession? = null
@@ -61,6 +63,9 @@ class AuthInfoManager(
     }
 
     val isAuthenticated: Boolean get() = accessToken != null && refreshToken != null
+    var isNewUser: Boolean
+        get() = cachedIsNewUser ?: preferences.getBoolean(KEY_IS_NEW_USER, true).also { cachedIsNewUser = it }
+        set(isNewUser) = preferences.edit().putBoolean(KEY_IS_NEW_USER, isNewUser).apply().also { cachedIsNewUser = isNewUser }
 
     var accessToken: String?
         get() = cachedAccessToken ?: preferences.getString(KEY_ACCESS_TOKEN, null).also { cachedAccessToken = it }

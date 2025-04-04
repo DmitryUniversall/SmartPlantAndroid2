@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Main colors -->
+    <color name="lightColorPrimary">#388E3C</color>
+    <color name="lightColorPrimaryVariant">#2E7D32</color>
+    <color name="lightColorSecondary">#8BC34A</color>
+    <color name="lightColorSecondaryVariant">#689F38</color>
+
+    <!-- Background and surfaces -->
+    <color name="lightColorBackground">#FFFFFF</color>
+    <color name="lightColorSurface">#F1F8E9</color>
+
+    <!-- Errors -->
+    <color name="lightColorError">#D32F2F</color>
+
+    <!-- Objects on main colors -->
+    <color name="lightOnColorPrimary">#FFFFFF</color>
+    <color name="lightOnColorSecondary">#000000</color>
+    <color name="lightOnColorBackground">#000000</color>
+    <color name="lightOnColorSurface">#000000</color>
+    <color name="lightOnColorError">#FFFFFF</color>
+
+    <!-- Dark theme -->
+
+    <color name="darkColorPrimary">#BB86FC</color>
+    <color name="darkColorPrimaryVariant">#3700B3</color>
+    <color name="darkColorSecondary">#03DAC6</color>
+    <color name="darkColorSecondaryVariant">#03DAC6</color>
+
+    <color name="darkColorBackground">#121212</color>
+    <color name="darkColorSurface">#1E1E1E</color>
+
+    <color name="darkColorError">#CF6679</color>
+
+    <color name="darkOnColorPrimary">#000000</color>
+    <color name="darkOnColorSecondary">#000000</color>
+    <color name="darkOnColorBackground">#FFFFFF</color>
+    <color name="darkOnColorSurface">#FFFFFF</color>
+    <color name="darkOnColorError">#000000</color>
 </resources>

@@ -22,7 +22,10 @@ class AuthServiceImplST private constructor(context: Context) : AuthService {
     }
 
     private val authInfoManager = AuthInfoManager(context)
-    private val authRepository: AuthRepository = AuthRepositoryImplST.instance
+    private val authRepository: AuthRepository get() = AuthRepositoryImplST.instance
+
+    override val isNewUser: Boolean
+        get() = authInfoManager.isNewUser
 
     override val isAuthenticated: Boolean
         get() = authInfoManager.isAuthenticated

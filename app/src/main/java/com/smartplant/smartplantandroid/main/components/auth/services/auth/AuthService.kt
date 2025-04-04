@@ -6,6 +6,7 @@ import com.smartplant.smartplantandroid.main.components.auth.repositories.auth.d
 import com.smartplant.smartplantandroid.main.components.auth.repositories.auth.dto.RegisterResponseDTO
 
 interface AuthService {
+    val isNewUser: Boolean
     val isAuthenticated: Boolean
     var accessToken: String?
     var refreshToken: String?

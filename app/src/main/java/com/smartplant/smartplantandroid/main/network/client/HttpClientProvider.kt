@@ -1,5 +1,6 @@
 package com.smartplant.smartplantandroid.main.network.client
 
+import com.smartplant.smartplantandroid.BuildConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -18,6 +19,7 @@ object HttpClientProvider {
             install(ContentNegotiation) { json(Json { ignoreUnknownKeys = true }) }
             defaultRequest {
                 contentType(ContentType.Application.Json)
+                url(BuildConfig.API_URL)
             }
         }
     }

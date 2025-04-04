@@ -1,3 +1,15 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+fun getApiKey(propertyKey: String): String {
+    val properties = Properties()
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (!localPropertiesFile.exists()) error("local.properties file not found")
+
+    properties.load(FileInputStream(localPropertiesFile))
+    return properties.getProperty(propertyKey) ?: error("'$propertyKey' not found in local.properties. Make sure it's defined")
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -8,10 +20,6 @@ android {
     namespace = "com.smartplant.smartplantandroid"
     compileSdk = 35
 
-    viewBinding {
-        enable = true
-    }
-
     defaultConfig {
         applicationId = "com.smartplant.smartplantandroid"
         minSdk = 29
@@ -19,7 +27,13 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        val apiUrl = getApiKey("API_URL")
+        buildConfigField("String", "API_URL", "\"$apiUrl\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
     }
 
     buildTypes {
@@ -36,19 +50,6 @@ android {
 
     kotlinOptions {
         jvmTarget = "11"
-    }
-
-    buildFeatures {
-        buildConfig = true
-    }
-
-    buildTypes {
-        release {
-            buildConfigField("String", "API_URL", "\"${project.findProperty("API_URL")}\"")
-        }
-        debug {
-            buildConfigField("String", "API_URL", "\"${project.findProperty("API_URL")}\"")
-        }
     }
 }
 
@@ -70,5 +71,3 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
-
-val apiUrl: String by project

@@ -3,8 +3,8 @@
     <!-- Main colors -->
     <color name="lightColorPrimary">#388E3C</color>
     <color name="lightColorPrimaryVariant">#2E7D32</color>
-    <color name="lightColorSecondary">#8BC34A</color>
-    <color name="lightColorSecondaryVariant">#689F38</color>
+    <color name="lightColorSecondary">#B36A6A6A</color>
+    <color name="lightColorSecondaryVariant">#BABABA</color>
 
     <!-- Background and surfaces -->
     <color name="lightColorBackground">#FFFFFF</color>

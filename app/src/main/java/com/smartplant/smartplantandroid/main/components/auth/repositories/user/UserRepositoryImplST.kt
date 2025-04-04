@@ -17,7 +17,7 @@ class UserRepositoryImplST : UserRepository {
 
     override suspend fun getMe(): Result<UserPrivate> {
         val request = HttpRequestBuilder().apply {
-            url("/users/user/me")
+            url("users/user/me")
             method = HttpMethod.Get
         }
 

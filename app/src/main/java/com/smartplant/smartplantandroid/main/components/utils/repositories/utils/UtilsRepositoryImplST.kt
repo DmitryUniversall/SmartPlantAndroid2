@@ -16,7 +16,7 @@ class UtilsRepositoryImplST : UtilsRepository {
 
     override suspend fun ping(): Result<Unit> {
         val request = HttpRequestBuilder().apply {
-            url("/utils/ping")
+            url("utils/ping")
             method = HttpMethod.Get
         }
 

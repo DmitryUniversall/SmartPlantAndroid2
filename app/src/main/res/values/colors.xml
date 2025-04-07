@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main colors -->
-    <color name="lightColorPrimary">#388E3C</color>
-    <color name="lightColorPrimaryVariant">#2E7D32</color>
+    <color name="lightColorPrimary">#539957</color>
+    <color name="lightColorPrimaryVariant">#205B31</color>
     <color name="lightColorSecondary">#B36A6A6A</color>
     <color name="lightColorSecondaryVariant">#BABABA</color>
 
     <!-- Background and surfaces -->
     <color name="lightColorBackground">#FFFFFF</color>
-    <color name="lightColorSurface">#F1F8E9</color>
+    <color name="lightColorSurface">#FBF9F6</color>
 
     <!-- Errors -->
-    <color name="lightColorError">#D32F2F</color>
+    <color name="lightColorError">#DA3B33</color>
 
     <!-- Objects on main colors -->
     <color name="lightOnColorPrimary">#FFFFFF</color>
-    <color name="lightOnColorSecondary">#000000</color>
-    <color name="lightOnColorBackground">#000000</color>
-    <color name="lightOnColorSurface">#000000</color>
+    <color name="lightOnColorSecondary">#0e3115</color>
+    <color name="lightOnColorBackground">#0e3115</color>
+    <color name="lightOnColorSurface">#0e3115</color>
     <color name="lightOnColorError">#FFFFFF</color>
 
     <!-- Dark theme -->

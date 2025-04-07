@@ -1,10 +1,7 @@
 package com.smartplant.smartplantandroid.main.ui.init
 
-import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.smartplant.smartplantandroid.R
-import com.smartplant.smartplantandroid.core.logs.AppLogger
 import com.smartplant.smartplantandroid.core.logs.AppLogger.logAsError
 import com.smartplant.smartplantandroid.main.components.auth.services.auth.AuthService
 import com.smartplant.smartplantandroid.main.components.auth.services.auth.AuthServiceImplST
@@ -20,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class InitViewModel : ViewModel() {
     sealed interface UIState {
-        data object Idle: UIState
+        data object Idle : UIState
         data object Loading : UIState
         data object ServerUnavailable : UIState
         data object UserUpdateSuccess : UIState

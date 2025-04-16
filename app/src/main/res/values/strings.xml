@@ -6,4 +6,14 @@
     <string name="retry">Retry</string>
     <string name="somethingWentWrong">Something went wrong</string>
     <string name="error">Error</string>
+    <string name="previous">Previous</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get started</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcomeMessage">Manage your SmartPlant device with ease</string>
+    <string name="features">Features</string>
+    <string name="featuresMessage">Monitor and adjust watering, light and temperature</string>
+    <string name="getStarted">Let\'s get started</string>
+    <string name="getStartedMessage">Log in to start using the app</string>
 </resources>

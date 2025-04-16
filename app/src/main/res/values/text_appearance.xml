@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary body text -->
+    <style name="TextAppearance.SmartPlant.Body.Primary" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Secondary body text -->
+    <style name="TextAppearance.SmartPlant.Body.Secondary" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Button text -->
+    <style name="TextAppearance.SmartPlant.Button" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Header 1 -->
+    <style name="TextAppearance.SmartPlant.H1" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Header 2 -->
+    <style name="TextAppearance.SmartPlant.H2" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Header 3 -->
+    <style name="TextAppearance.SmartPlant.H3" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Header 4 -->
+    <style name="TextAppearance.SmartPlant.H4" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Caption / small text -->
+    <style name="TextAppearance.SmartPlant.Caption" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Overline -->
+    <style name="TextAppearance.SmartPlant.Overline" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <!-- Error text -->
+    <style name="TextAppearance.SmartPlant.Error" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">?attr/colorError</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+</resources>

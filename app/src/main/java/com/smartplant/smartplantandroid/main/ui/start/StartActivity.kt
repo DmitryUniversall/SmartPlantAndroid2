@@ -1,15 +1,78 @@
 package com.smartplant.smartplantandroid.main.ui.start
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.viewpager2.widget.ViewPager2
+import com.smartplant.smartplantandroid.R
 import com.smartplant.smartplantandroid.databinding.ActivityStartBinding
+import com.smartplant.smartplantandroid.main.ui.auth.AuthActivity
+import kotlinx.coroutines.launch
+import kotlin.getValue
 
 class StartActivity : AppCompatActivity() {
+    private val viewModel: StartViewModel by viewModels()
     private lateinit var binding: ActivityStartBinding
+    private lateinit var adapter: StartPageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        adapter = StartPageAdapter(this)
+        binding.viewPager.adapter = adapter
+
+        initPages()
+        setupPager()
+        setupButtons()
+    }
+
+    private fun initPages() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.pages.collect { pages ->
+                    adapter.submitPages(pages)
+                    binding.pageIndicator.setActive(0)
+                }
+            }
+        }
+    }
+
+    private fun setupPager() {
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                binding.skipButton.isVisible = position != adapter.itemCount - 1
+                binding.nextButton.text = if (position == adapter.itemCount - 1) getText(R.string.get_started) else getText(R.string.next)
+            }
+        })
+    }
+
+    private fun navigateToAuth() {
+        val intent = Intent(this, AuthActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun setupButtons() {
+        binding.nextButton.setOnClickListener {
+            val currentItem = binding.viewPager.currentItem
+            if (currentItem >= adapter.itemCount - 1) {
+                navigateToAuth()
+                return@setOnClickListener
+            }
+
+            binding.viewPager.setCurrentItem(currentItem + 1, true)
+            binding.pageIndicator.setActive(currentItem + 1)
+        }
+
+        binding.skipButton.setOnClickListener {
+            binding.viewPager.setCurrentItem(adapter.itemCount - 1, true)
+            binding.pageIndicator.setActive(adapter.itemCount - 1)
+        }
     }
 }

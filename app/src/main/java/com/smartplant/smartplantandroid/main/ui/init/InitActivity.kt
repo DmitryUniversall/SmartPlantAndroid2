@@ -75,8 +75,6 @@ class InitActivity : AppCompatActivity() {
             return
         }
 
-        AppLogger.error("ERROR")
-
         binding.errorContainer.isVisible = true
         binding.errorMessage.text = getString(errorStringResId)
     }

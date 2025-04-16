@@ -15,9 +15,9 @@
 
     <!-- Objects on main colors -->
     <color name="lightOnColorPrimary">#FFFFFF</color>
-    <color name="lightOnColorSecondary">#0e3115</color>
-    <color name="lightOnColorBackground">#0e3115</color>
-    <color name="lightOnColorSurface">#0e3115</color>
+    <color name="lightOnColorSecondary">#FFFFFF</color>
+    <color name="lightOnColorBackground">#49454f</color>
+    <color name="lightOnColorSurface">#49454f</color>
     <color name="lightOnColorError">#FFFFFF</color>
 
     <!-- Dark theme -->

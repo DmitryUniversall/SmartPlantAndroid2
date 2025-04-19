@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.generics
+package com.smartplant.smartplantandroid.main.ui.global
 
 import android.animation.ObjectAnimator
 import android.content.Context

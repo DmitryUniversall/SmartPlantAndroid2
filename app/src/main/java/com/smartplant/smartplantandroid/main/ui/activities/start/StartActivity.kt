@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.start
+package com.smartplant.smartplantandroid.main.ui.activities.start
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,7 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewpager2.widget.ViewPager2
 import com.smartplant.smartplantandroid.R
 import com.smartplant.smartplantandroid.databinding.ActivityStartBinding
-import com.smartplant.smartplantandroid.main.ui.auth.AuthActivity
+import com.smartplant.smartplantandroid.main.ui.activities.auth.AuthActivity
 import kotlinx.coroutines.launch
 import kotlin.getValue
 

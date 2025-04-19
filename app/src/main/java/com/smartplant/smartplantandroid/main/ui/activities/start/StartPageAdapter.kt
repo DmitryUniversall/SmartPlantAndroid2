@@ -1,13 +1,13 @@
-package com.smartplant.smartplantandroid.main.ui.start
+package com.smartplant.smartplantandroid.main.ui.activities.start
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DiffUtil
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.smartplant.smartplantandroid.main.ui.start.StartViewModel.StartPageState
-import com.smartplant.smartplantandroid.main.ui.start.fragments.FeaturesPageFragment
-import com.smartplant.smartplantandroid.main.ui.start.fragments.StartPageFragment
-import com.smartplant.smartplantandroid.main.ui.start.fragments.WelcomePageFragment
+import com.smartplant.smartplantandroid.main.ui.activities.start.StartViewModel.StartPageState
+import com.smartplant.smartplantandroid.main.ui.activities.start.fragments.FeaturesPageFragment
+import com.smartplant.smartplantandroid.main.ui.activities.start.fragments.StartPageFragment
+import com.smartplant.smartplantandroid.main.ui.activities.start.fragments.WelcomePageFragment
 
 
 class StartPageAdapter(

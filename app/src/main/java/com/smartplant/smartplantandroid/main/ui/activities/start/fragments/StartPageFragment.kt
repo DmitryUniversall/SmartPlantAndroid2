@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.start.fragments
+package com.smartplant.smartplantandroid.main.ui.activities.start.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

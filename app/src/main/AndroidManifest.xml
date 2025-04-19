@@ -18,7 +18,7 @@
             tools:targetApi="31"
             android:networkSecurityConfig="@xml/network_security_config">
         <activity
-                android:name=".main.ui.init.InitActivity"
+                android:name=".main.ui.activities.init.InitActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,15 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".main.ui.start.StartActivity"
+                android:name=".main.ui.activities.start.StartActivity"
                 android:exported="true">
         </activity>
         <activity
-                android:name=".main.ui.auth.AuthActivity"
+                android:name=".main.ui.activities.auth.AuthActivity"
                 android:exported="true">
         </activity>
         <activity
-                android:name=".main.ui.main.MainActivity"
+                android:name=".main.ui.activities.main.MainActivity"
                 android:exported="true">
         </activity>
     </application>

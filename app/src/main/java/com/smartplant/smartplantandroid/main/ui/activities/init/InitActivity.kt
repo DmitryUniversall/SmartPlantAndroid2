@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.init
+package com.smartplant.smartplantandroid.main.ui.activities.init
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,9 +14,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.smartplant.smartplantandroid.R
 import com.smartplant.smartplantandroid.core.logs.AppLogger
 import com.smartplant.smartplantandroid.databinding.ActivityInitBinding
-import com.smartplant.smartplantandroid.main.ui.auth.AuthActivity
-import com.smartplant.smartplantandroid.main.ui.main.MainActivity
-import com.smartplant.smartplantandroid.main.ui.start.StartActivity
+import com.smartplant.smartplantandroid.main.ui.activities.auth.AuthActivity
+import com.smartplant.smartplantandroid.main.ui.activities.main.MainActivity
+import com.smartplant.smartplantandroid.main.ui.activities.start.StartActivity
 import kotlinx.coroutines.launch
 
 

@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.start
+package com.smartplant.smartplantandroid.main.ui.activities.start
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

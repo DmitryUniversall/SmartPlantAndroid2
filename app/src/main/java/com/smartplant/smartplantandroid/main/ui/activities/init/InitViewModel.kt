@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.init
+package com.smartplant.smartplantandroid.main.ui.activities.init
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

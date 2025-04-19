@@ -1,4 +1,4 @@
-package com.smartplant.smartplantandroid.main.ui.main
+package com.smartplant.smartplantandroid.main.ui.activities.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

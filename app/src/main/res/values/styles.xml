@@ -9,7 +9,7 @@
     <style name="Widget.SmartPlant.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:textAppearance">@style/TextAppearance.SmartPlant.Button</item>
         <item name="strokeWidth">2dp</item>
-        <item name="cornerRadius">8dp</item>
+        <item name="cornerRadius">4dp</item>
         <item name="iconPadding">8dp</item>
     </style>
 
@@ -18,7 +18,7 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="Widget.SmartPlant.Button.Outlined.Primary" parent="Widget.SmartPlant.Button.Outline">
+    <style name="Widget.SmartPlant.Button.Outline.Primary" parent="Widget.SmartPlant.Button.Outline">
         <item name="strokeColor">?attr/colorPrimary</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
@@ -28,7 +28,7 @@
         <item name="android:textColor">?attr/colorOnSecondary</item>
     </style>
 
-    <style name="Widget.SmartPlant.Button.Outlined.Secondary" parent="Widget.SmartPlant.Button.Outline">
+    <style name="Widget.SmartPlant.Button.Outline.Secondary" parent="Widget.SmartPlant.Button.Outline">
         <item name="strokeColor">?attr/colorSecondary</item>
         <item name="android:textColor">?attr/colorSecondary</item>
     </style>

@@ -1,0 +1,54 @@
+<resources>
+    <style name="Theme.SmartPlantAndroid" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="materialButtonStyle">@style/Widget.SmartPlant.Button.Primary</item>
+        <item name="shapeAppearanceSmallComponent">@style/Shape.SmartPlant.Button</item>
+    </style>
+
+    <style name="Theme.SmartPlantAndroid.Light" parent="Theme.SmartPlantAndroid">
+        <!-- Primary color -->
+        <item name="colorPrimary">@color/lightColorPrimary</item>
+        <item name="colorPrimaryVariant">@color/lightColorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/lightOnColorPrimary</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/lightColorSecondary</item>
+        <item name="colorSecondaryVariant">@color/lightColorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/lightOnColorSecondary</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/lightColorBackground</item>
+        <item name="colorOnBackground">@color/lightOnColorBackground</item>
+
+        <!-- Surface -->
+        <item name="colorSurface">@color/lightColorSurface</item>
+        <item name="colorOnSurface">@color/lightOnColorSurface</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/lightColorError</item>
+        <item name="colorOnError">@color/lightOnColorError</item>
+    </style>
+
+    <style name="Theme.SmartPlantAndroid.Dark" parent="Theme.SmartPlantAndroid">
+        <!-- Primary color -->
+        <item name="colorPrimary">@color/darkColorPrimary</item>
+        <item name="colorPrimaryVariant">@color/darkColorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/darkOnColorPrimary</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/darkColorSecondary</item>
+        <item name="colorSecondaryVariant">@color/darkColorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/darkOnColorSecondary</item>
+
+        <!-- Background -->
+        <item name="android:colorBackground">@color/darkColorBackground</item>
+        <item name="colorOnBackground">@color/darkOnColorBackground</item>
+
+        <!-- Surface -->
+        <item name="colorSurface">@color/darkColorSurface</item>
+        <item name="colorOnSurface">@color/darkOnColorSurface</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/darkColorError</item>
+        <item name="colorOnError">@color/darkOnColorError</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="serverUnavailable">Server unavailable. Please, try again later</string>
+    <string name="internalServerError">Internal server error occurred</string>
+    <string name="somethingWentWrong">Something went wrong</string>
+    <string name="unknownError">Unknown error occurred</string>
+    <string name="appName">SmartPlant</string>
+    <string name="previous">Previous</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="slogan">Your Plant Care Assistant</string>
+    <string name="continueAction">Continue</string>
+</resources>

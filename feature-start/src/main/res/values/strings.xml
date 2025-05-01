@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="get_started">Get started</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcomeMessage">Manage your SmartPlant device with ease</string>
+    <string name="features">Features</string>
+    <string name="featuresMessage">Monitor and adjust watering, light and temperature</string>
+    <string name="getStarted">Let\'s get started</string>
+    <string name="getStartedMessage">Log in to start using the app</string>
+</resources>

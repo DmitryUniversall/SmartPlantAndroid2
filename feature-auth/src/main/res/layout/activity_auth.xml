@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:theme="@style/Theme.SmartPlantAndroid.Light"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
@@ -16,6 +19,7 @@
             android:textSize="48sp"
             android:textAlignment="center"
             android:letterSpacing="0.05"
+            android:layout_marginTop="60dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -50,7 +54,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/registerButton"
             app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintHorizontal_weight="1" />
+            app:layout_constraintHorizontal_weight="1"
+            tools:ignore="VisualLintButtonSize" />
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/registerButton"
@@ -61,7 +66,8 @@
             app:layout_constraintTop_toTopOf="@id/loginButton"
             app:layout_constraintStart_toEndOf="@id/loginButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_weight="1" />
+            app:layout_constraintHorizontal_weight="1"
+            tools:ignore="VisualLintButtonSize" />
 
     <!-- Inputs group -->
     <androidx.viewpager2.widget.ViewPager2
@@ -84,5 +90,6 @@
             android:text="@string/continueAction"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="VisualLintButtonSize" />
 </androidx.constraintlayout.widget.ConstraintLayout>

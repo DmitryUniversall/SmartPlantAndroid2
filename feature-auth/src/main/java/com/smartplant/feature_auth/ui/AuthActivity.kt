@@ -27,6 +27,7 @@ class AuthActivity : AppCompatActivity() {
         subscribe()
         setupNav()
         setupPager()
+        setLoginPage()
     }
 
     private fun setupNav() {
@@ -58,13 +59,11 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun setState(state: AuthViewModel.AuthPageState) {
-        if (state == viewModel.pageState.value) return
-
         viewModel.setPageState(state)
 
-        if (viewModel.pageState.value == AuthViewModel.AuthPageState.Login) binding.loginButton.makePrimary() else binding.loginButton.makeOutlinedPrimary()
-        if (viewModel.pageState.value == AuthViewModel.AuthPageState.Register) binding.registerButton.makePrimary() else binding.registerButton.makeOutlinedPrimary()
-        binding.submitButton.text = if (viewModel.pageState.value == AuthViewModel.AuthPageState.Login) getString(R.string.loginAction) else getString(R.string.registerAction)
+        if (state == AuthViewModel.AuthPageState.Login) binding.loginButton.makePrimary() else binding.loginButton.makeOutlinedPrimary()
+        if (state == AuthViewModel.AuthPageState.Register) binding.registerButton.makePrimary() else binding.registerButton.makeOutlinedPrimary()
+        binding.submitButton.text = if (state == AuthViewModel.AuthPageState.Login) getString(R.string.loginAction) else getString(R.string.registerAction)
 
         when (state) {
             is AuthViewModel.AuthPageState.Login -> binding.authFragmentPager.setCurrentItem(0, true)

@@ -17,4 +17,7 @@ kotlin {
 dependencies {
     // Inject
     implementation(libs.javax.inject)
+
+    // Serialization
+    implementation(libs.kotlinx.datetime)
 }

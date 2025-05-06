@@ -2,9 +2,9 @@ package com.smartplant.core_android.network.client
 
 import android.util.Log
 import com.smartplant.core_android.BuildConfig
-import com.smartplant.core_android.utils.logs.AndroidAppLogger
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
+import io.ktor.client.plugins.HttpRedirect
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.LogLevel
@@ -18,6 +18,10 @@ import kotlinx.serialization.json.Json
 object HttpClientProvider {
     val client: HttpClient by lazy {
         HttpClient(Android) {
+            install(HttpRedirect) {
+                checkHttpMethod = false  // Allow redirects for POST, PUT, etc.
+            }
+
             install(Logging) {
                 logger = object : Logger {
                     override fun log(message: String) {

@@ -1,6 +1,6 @@
 package com.smartplant.domain_user.entities
+import kotlinx.datetime.LocalDateTime
 
-import java.time.LocalDateTime
 
 data class UserPrivate(
     val id: Int,

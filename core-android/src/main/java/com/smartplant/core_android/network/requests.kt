@@ -28,7 +28,7 @@ suspend inline fun <reified T> apiCall(requestBuilder: io.ktor.client.request.Ht
 
     val callResult = sendRequest<T>(requestBuilder)
 
-    if (callResult.apiResponse.applicationStatusCode in 3005..3015) {
+    if (callResult.apiResponse.applicationStatusCode != 3009 && callResult.apiResponse.applicationStatusCode in 3005..3015) {
         refreshMutex.withLock { refreshToken() }
         return sendRequest(requestBuilder)
     }

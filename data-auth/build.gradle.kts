@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 
+    alias(libs.plugins.kotlin.serialization)
+
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
@@ -59,6 +61,7 @@ dependencies {
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
 
     // Test
     testImplementation(libs.junit)

@@ -1,6 +1,6 @@
 package com.smartplant.domain_auth.entities
 
-import java.time.LocalDateTime
+import kotlinx.datetime.LocalDateTime
 
 data class AuthSession(
     val isActive: Boolean,

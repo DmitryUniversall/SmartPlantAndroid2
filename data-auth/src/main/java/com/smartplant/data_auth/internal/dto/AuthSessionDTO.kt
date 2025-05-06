@@ -1,9 +1,8 @@
 package com.smartplant.data_auth.internal.dto
 
-import kotlinx.serialization.Contextual
+import kotlinx.datetime.LocalDateTime
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.time.LocalDateTime
 
 @Serializable
 data class AuthSessionDTO(
@@ -19,15 +18,12 @@ data class AuthSessionDTO(
     @SerialName("session_name")
     val sessionName: String,
 
-    @Contextual
     @SerialName("created_at")
     val createdAt: LocalDateTime,
 
-    @Contextual
     @SerialName("last_used")
     val lastUsed: LocalDateTime,
 
-    @Contextual
     @SerialName("expires_at")
     val expiresAt: LocalDateTime,
 )

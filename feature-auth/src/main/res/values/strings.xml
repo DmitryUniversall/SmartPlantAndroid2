@@ -7,4 +7,10 @@
     <string name="passwordConfirmation">Password confirmation</string>
     <string name="loginAction">Login</string>
     <string name="registerAction">Register</string>
+    <string name="errorFieldRequired">Required</string>
+    <string name="passwordTooShort">Too short</string>
+    <string name="passwordsNoMatch">Passwords does not match</string>
+    <string name="userAlreadyExists">User with specified username already exists</string>
+    <string name="userNotFound">User with specified username was not found</string>
+    <string name="WrongAuthenticationCredentials">Wrong username or password</string>
 </resources>

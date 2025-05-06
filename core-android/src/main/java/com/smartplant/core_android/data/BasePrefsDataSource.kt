@@ -1,6 +1,7 @@
 package com.smartplant.core_android.data
 
 import android.content.SharedPreferences
+import com.smartplant.core_android.utils.logs.AppLogger
 import kotlinx.serialization.json.Json
 
 abstract class BasePrefsDataSource(
@@ -22,10 +23,11 @@ abstract class BasePrefsDataSource(
         cache.remove(key)
     }
 
-    protected fun getString(key: String): String? =
-        (cache[key] as? String)
+    protected fun getString(key: String): String? {
+        return (cache[key] as? String)
             ?: prefs.getString(key, null)
                 ?.also { cache[key] = it }
+    }
 
     protected fun getBoolean(key: String, default: Boolean = false): Boolean {
         return prefs.getBoolean(key, default)

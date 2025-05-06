@@ -38,6 +38,7 @@ android {
 
 dependencies {
     // Project
+    implementation(project(":core-common"))
     implementation(project(":core-android"))
     implementation(project(":domain-auth"))
 
@@ -48,6 +49,7 @@ dependencies {
     // KTX
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
     // UI
     implementation(libs.androidx.constraintlayout)

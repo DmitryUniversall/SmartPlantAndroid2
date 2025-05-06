@@ -10,3 +10,11 @@ fun UserPrivateDTO.toEntity(): UserPrivate {
         createdAt = this.createdAt
     )
 }
+
+fun UserPrivate.toDTO(): UserPrivateDTO {
+    return UserPrivateDTO(
+        id = this.id,
+        username = this.username,
+        createdAt = this.createdAt
+    )
+}

@@ -2,7 +2,7 @@ package com.smartplant.core_android.utils.logs
 
 import android.util.Log
 
-object AndroidAppLogger {
+object AppLogger {
     private val currentStackTraceElement: StackTraceElement
         get() = Thread.currentThread().stackTrace[6]  // TODO: auto stack index
 

@@ -1,6 +1,8 @@
 plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 java {
@@ -17,4 +19,5 @@ kotlin {
 dependencies {
     // Serialization
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.datetime)
 }

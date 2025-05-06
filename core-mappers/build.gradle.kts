@@ -18,4 +18,7 @@ dependencies {
     // Project
     implementation(project(":core-dto"))
     implementation(project(":domain-user"))
+
+    // Serialization
+    implementation(libs.kotlinx.datetime)
 }

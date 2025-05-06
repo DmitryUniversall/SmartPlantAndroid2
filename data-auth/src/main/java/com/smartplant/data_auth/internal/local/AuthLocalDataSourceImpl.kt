@@ -3,6 +3,9 @@ package com.smartplant.data_auth.internal.local
 import android.content.SharedPreferences
 import com.smartplant.core_android.data.BasePrefsDataSource
 import com.smartplant.core_android.di.qualifiers.EncryptedSharedPrefs
+import com.smartplant.data_auth.internal.dto.AuthSessionDTO
+import com.smartplant.data_auth.internal.mappers.toDTO
+import com.smartplant.data_auth.internal.mappers.toEntity
 import com.smartplant.domain_auth.entities.AuthSession
 import javax.inject.Inject
 
@@ -21,10 +24,10 @@ internal class AuthLocalDataSourceImpl @Inject constructor(
     override val isNewUser: Boolean get() = getBoolean(KEY_IS_NEW_USER, default = true)
     override val accessToken: String? get() = getString(KEY_ACCESS_TOKEN)
     override val refreshToken: String? get() = getString(KEY_REFRESH_TOKEN)
-    override val session: AuthSession? get() = getObject(KEY_SESSION)
+    override val session: AuthSession? get() = getObject<AuthSessionDTO>(KEY_SESSION)?.toEntity()
 
     override fun setNewUser(isNewUser: Boolean) = saveBoolean(KEY_IS_NEW_USER, isNewUser)
-    override fun saveAccessToken(token: String) = saveString(KEY_ACCESS_TOKEN, token)
+    override fun saveAccessToken(token: String) = saveString(KEY_ACCESS_TOKEN, token).also { setNewUser(false) }
     override fun saveRefreshToken(token: String) = saveString(KEY_REFRESH_TOKEN, token)
-    override fun saveSession(session: AuthSession) = saveObject(KEY_SESSION, session)
+    override fun saveSession(session: AuthSession) = saveObject<AuthSessionDTO>(KEY_SESSION, session.toDTO())
 }

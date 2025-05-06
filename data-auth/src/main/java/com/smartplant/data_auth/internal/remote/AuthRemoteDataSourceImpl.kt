@@ -16,7 +16,7 @@ import javax.inject.Inject
 internal class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSource {
     override suspend fun login(dto: LoginRequestDTO): Result<LoginResponseDTO> {
         val request = HttpRequestBuilder().apply {
-            url("auth/login")
+            url("auth/login/")
             method = HttpMethod.Post
             setBody(dto)
         }
@@ -31,7 +31,7 @@ internal class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSo
 
     override suspend fun register(dto: RegisterRequestDTO): Result<RegisterResponseDTO> {
         val request = HttpRequestBuilder().apply {
-            url("auth/register")
+            url("auth/register/")
             method = HttpMethod.Post
             setBody(dto)
         }
@@ -46,7 +46,7 @@ internal class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSo
 
     override suspend fun refresh(dto: RefreshRequestDTO): Result<RefreshResponseDTO> {
         val request = HttpRequestBuilder().apply {
-            url("auth/refresh")
+            url("auth/refresh/")
             method = HttpMethod.Post
             setBody(dto)
         }
@@ -61,7 +61,7 @@ internal class AuthRemoteDataSourceImpl @Inject constructor() : AuthRemoteDataSo
 
     override suspend fun logout(): Result<Unit> {
         val request = HttpRequestBuilder().apply {
-            url("auth/logout")
+            url("auth/logout/")
             method = HttpMethod.Get
         }
 

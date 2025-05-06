@@ -1,9 +1,8 @@
 package com.smartplant.core_dto
 
-import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.time.LocalDateTime
+import kotlinx.datetime.LocalDateTime
 
 @Serializable
 data class UserPrivateDTO(
@@ -13,7 +12,6 @@ data class UserPrivateDTO(
     @SerialName("username")
     val username: String,
 
-    @Contextual
     @SerialName("created_at")
     val createdAt: LocalDateTime,
 )

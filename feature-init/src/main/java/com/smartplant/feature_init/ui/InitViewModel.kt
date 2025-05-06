@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.smartplant.api_utils.pub.utils.ApiUtils
 import com.smartplant.core_android.network.exceptions.ApiRespondedErrorException
-import com.smartplant.core_android.utils.logs.AndroidAppLogger.logAsError
+import com.smartplant.core_android.utils.logs.AppLogger.logAsError
 import com.smartplant.domain_auth.service.AuthService
 import com.smartplant.domain_user.service.UserService
 import dagger.hilt.android.lifecycle.HiltViewModel
